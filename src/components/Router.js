@@ -8,27 +8,27 @@ import Navigaion from "components/Navigation";
 const AppRouter = ({isLoggedIn, userObj }) => {
     return (
         <Router>
-            {isLoggedIn && <Navigaion />}
-            <Switch>
-                {isLoggedIn ? (
-                    <>
-                        <Route exact path="/">
-                            <Home userObj={userObj} />
-                        </Route>
-                        <Route exact path="/profile">
-                            <Profile/>
-                        </Route>
-                        {/* <Redirect from="*" to="/" /> */}
-                    </>
-                ) : (
-                    <>
-                    <Route exact path="/">
-                        <Auth />
-                    </Route>
-                    {/* <Redirect from="*" to="/" /> */}
-                    </>
-                )}
-            </Switch>
+          {isLoggedIn && <Navigaion />}
+          <Switch>
+            {isLoggedIn ? (
+              <>
+                <Route exact path="/">
+                    <Home userObj={userObj} />
+                </Route>
+                <Route exact path="/profile">
+                    <Profile/>
+                </Route>
+                {/* <Redirect from="*" to="/" /> */}
+              </>
+            ) : (
+              <>
+              <Route exact path="/">
+                  <Auth />
+              </Route>
+              {/* <Redirect from="*" to="/" /> */}
+              </>
+            )}
+          </Switch>
         </Router>
     )
 };
